@@ -1,0 +1,26 @@
+{
+  "name": "costrealty",
+  "version": "1.0.0",
+  "engines": {
+    "node": "14.17.3"
+  },
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "concurrently \"npm run app\" \"npm run client\"",
+    "app": "node index.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run app\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "author": "sharjeelsk",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "read-excel-file": "^5.2.28",
+    "concurrently": "^6.2.0"
+  }
+}

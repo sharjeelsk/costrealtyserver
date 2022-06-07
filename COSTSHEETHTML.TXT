@@ -1,0 +1,414 @@
+import React from 'react'
+import "./CostSheet.scss"
+import _ from 'lodash'
+function CostSheet(props) {
+    console.log(props)
+    let sheetArray = props.location.state
+    const [sheet,setSheet]=React.useState({carpetAreaSM:0,carpetAreaSF:0})
+    React.useEffect(()=>{
+        let carpetAreaSM=0;
+        let carpetAreaSF=0;
+        sheetArray.map(item=>{
+            item.map(obj=>{
+                _.map(obj,(value,key)=>{
+                    if(key==="Area(SQM)"){
+                        carpetAreaSM=carpetAreaSM+value
+                    }if(key==="AREA")
+                })
+            })
+        })
+    },[])
+  return (
+    <div className='cost-sheet'>
+        <h1>Cost Sheet & Payment Schedule For Office Platinum Towers</h1>
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-2 col-cell col-10">
+        <p>Date of Booking</p>
+    </div>
+    <div className="p-2 col-cell col-2">
+        <p>May 5, 2022, 5:20:47 AM</p>
+    </div>
+</div>
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-2 col-cell col-6">
+        <p className='boldtext'>Name</p>
+    </div>
+    <div className="p-2 col-cell col-4">
+        <p className='boldtext'>Unit & FLoor No</p>
+    </div>
+    <div className="p-2 col-cell col-2 bgyellow">
+        <p className='boldtext'>Office 5th Floor</p>
+    </div>
+</div>
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-2 col-cell col-6">
+        <p className='boldtext'></p>
+    </div>
+    <div className="p-2 col-cell col-4">
+        <p className='boldtext'>Sq.Mtr</p>
+    </div>
+    <div className="p-2 col-cell col-2">
+        <p className='boldtext'>Sq.Ft</p>
+    </div>
+</div>
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-0 col-cell col-2 flex-center">
+        <p className=''>Unit Details</p>
+    </div>
+    <div className="p-0 col-cell col-4">
+        <p className='p-2 col-cell-inner'>(a) Carpet Area</p>
+        <p className='p-2 col-cell-inner'>(b) Enclosed Balcony</p>
+        <p className='p-2 col-cell-inner'>(c) Loft</p>
+        <p className='p-2 col-cell-inner'>(d) Terrace</p>
+        <p className='p-2 col-cell-inner'>Total Carpet Area</p>
+    </div>
+    <div className="p-0 col-cell col-4">
+            <p className='p-2 col-cell-inner'>109.07</p>
+        <p className='p-2 col-cell-inner'>0.00</p>
+        <p className='p-2 col-cell-inner'>0.00</p>
+        <p className='p-2 col-cell-inner'>66.03</p>
+        <p className='p-2 col-cell-inner'>175.10</p>
+    </div>
+    <div className="p-0 col-cell col-2">
+            <p className='p-2 col-cell-inner'>1,174.03</p>
+        <p className='p-2 col-cell-inner'>0.00</p>
+        <p className='p-2 col-cell-inner'>0.00</p>
+        <p className='p-2 col-cell-inner'>710.75</p>
+        <p className='p-2 col-cell-inner'>1,884.78</p>
+    </div>
+</div>
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-0 col-cell col-2 flex-center">
+        <p className=''>Consideration Value</p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner'>Basic Value</p>
+        <p className='p-2 col-cell-inner'>Car Parking Charges</p>
+        <p className='p-2 col-cell-inner'>Bike Parking Charges</p>
+        <p className='p-2 col-cell secbold'>Agreement Cost</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+        <p className='p-2 col-cell2'>25,600</p>
+        <p className='p-2 col-cell2'>50.00</p>
+        <p className='p-2 col-cell2 secbold'>77,0010.75</p>
+    </div>
+</div>
+
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-0 col-cell col-2 flex-center">
+        <p className=''>Other Contributions</p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner'>DG Backup Charges</p>
+        <p className='p-2 col-cell-inner'>MSEB Charges</p>
+        <p className='p-2 col-cell-inner'>Share Money, Society Formation, Water Connection, Fire Fighting System & Other Miscllenious Charges</p>
+        <p className='p-2 col-cell-inner secbold'>Other Charges</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+        <p className='p-2 col-cell2'>25,600</p>
+        <p className='p-2 col-cell2'>50.00</p>
+        <p className='p-2 col-cell2'>77,0010.75</p>
+    </div>
+</div>
+
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-2 col-cell col-2">
+        <p className=''></p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner secbold'>Total Cost of Unit Excluding Govt. Taxes</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+    </div>
+</div>
+
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-0 col-cell col-2 flex-center">
+        <p className=''>Goods & Service Tax</p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner'>Central GST @ 6% of 2/3rd of Net Consideration (as currently applicable)</p>
+        <p className='p-2 col-cell-inner'>State GST @ 6% of 2/3rd of Net Consideration (as currently applicable)</p>
+     
+        <p className='p-2 col-cell-inner secbold'>Total GST</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+        <p className='p-2 col-cell2'>25,600</p>
+      <p className='p-2 col-cell2 secbold'>77,0010.75</p>
+    </div>
+</div>
+
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-0 col-cell col-2 flex-center">
+        <p className=''>Stamp Duty & Registration Charges</p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner'>Stamp Duty @ 7%</p>
+        <p className='p-2 col-cell-inner'>Registration Charges</p>
+        <p className='p-2 col-cell-inner'>Legal Charges (paid by Customer at the time of Registration)</p>
+        <p className='p-2 col-cell-inner secbold'>Total Stamp Duty & Registration Charges</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+        <p className='p-2 col-cell2'>25,600</p>
+        <p className='p-2 col-cell2'>25,600</p>
+      <p className='p-2 col-cell2 secbold'>77,0010.75</p>
+    </div>
+</div>
+
+
+<div className='p-0 row row-cell m-auto'>
+    <div className="p-2 col-cell col-2">
+        <p className=''></p>
+    </div>
+    <div className="p-0 col-cell col-8">
+        <p className='p-2 col-cell-inner secbold'>Total Cost including Govt. Taxes</p>
+    </div>
+
+    <div className="p-0 col-cell col-2">
+        <p className='p-2 col-cell2'>2,75,566</p>
+    </div>
+</div>
+
+
+<h1>Cost Sheet & Payment Schedule For Office Platinum Towers</h1>
+        <table className="ui celled table">
+        <thead>
+            <tr><th>Sr No</th>
+            <th>Stages of Construction</th>
+            <th>% on A.V.</th>
+            <th>Amount (Rs.)</th>
+            <th>GST</th>
+        </tr></thead>
+        <tbody>
+            <tr>
+            <td>1</td>
+            <td>9% at the time of Booking (Token Amount)</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+
+            <tr>
+            <td>2</td>
+            <td>21% at the time of registration of this agreement</td>
+            <td>21%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>3</td>
+            <td>15% On Completion of Plinth</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>4</td>
+            <td>20% On Completion of 2nd Floor Slab</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>5</td>
+            <td>10% on completion of 5th Floor Slab</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>6</td>
+            <td>5% On Completion of the walls, internal plaster, floorings, doors and windows upto the floor level</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>7</td>
+            <td>5% on completion of the staircases, lift wells, lobbies upto the floor level</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>8</td>
+            <td>5% on completion of the external plumbing, external plaster, elevation, terraces with waterproofing, of the building or wing   </td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>9</td>
+            <td>5% on completion of the lifts, water pumps, electrical fittings, electro, mechanical and environment requirements, entrance lobby/s, plinth protection, paving of areas appertain of the building or wing</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>10</td>
+            <td>5% of the total consideration against and at the time of handing over of the possession </td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr>
+            <td>11</td>
+            <td>DG Backup, MSEB Charges, Share Money, Society Formation, Water Connection, Fire Fighting System & Other Miscllenious Charges on Possession</td>
+            <td>9%</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+            <tr className='secbold'>
+            <td colSpan={3}>Total Cost Of Unit</td>
+            <td>246,939,773</td>
+            <td>246,939,773</td>
+            </tr>
+
+        </tbody>
+</table>
+
+
+<h3>Please Note</h3>
+
+<div className="note-head">
+    <p className="note">a) Date of Registration (On or Before) :</p>
+</div>
+
+<div className="note-head">
+    <p className="note">b) MSEB Charges, DG Backup Charges & Corpus fund will be collected at the time of possession.</p>
+</div>
+
+<div className="note-head">
+    <p className="note">c) Carpet area may change based on the new carpet area calculation as per RERA.</p>
+</div>
+
+<div className="note-head">
+    <p className="note">d) Government charges / taxes are subject to change & would be applicable on actual.</p>
+</div>
+
+<div className="note-head">
+    <p className="note">e) Any new born taxes & existing taxes will be paid by customers.</p>
+</div>
+
+<div className="note-head">
+    <p className="note">f) The consideration of the unit has been arrived after adjusting the Input Tax Credit Benefit under GST.</p>
+</div>
+
+<div className="note-head">
+    <p className="note">g) Rates & availability of units is subject to change without prior notice till booking. Any Discount Given is subject to same day booking.</p>
+</div>
+
+<div className='note-head'>
+    <p className='note'>h) No modifications allowed in the unit.</p>
+</div>
+
+
+<div className='note-head'>
+    <p className='note'>i) 1% TDS is required to be deducted by the property buyers wherein property value is more than or equal to 50 Lakhs.</p>
+</div>
+
+
+<div className='note-head'>
+    <p className='note'>j) This is purely tentative Costing of the apartments and does not commit any availability.</p>
+</div>
+
+
+<div className='note-head'>
+    <p className='note'>k) MAHARERA REGISTRATION NO: P52100019881 available on the website https://maharera.mahaonline.gov.in under registered projects.</p>
+</div>
+
+<div className='note-head'>
+    <p className='note'>l) Maintainence charges GST ( as applicable rate ) will be paid by customer from earlier of handover of possession or occupation certificate.</p>
+</div>
+
+<div className='note-head'>
+    <p className='note'>m) All Cheques should be in the name of : Avishkar Arista Developers LLP .</p>
+</div>
+
+
+<section className="row m-auto justify-content-between sign">
+    <div className="col-3 sign-cont">
+        <p>For Avishkar Arista Developers LLP</p>
+    </div>
+    <div className="col-3 sign-cont">
+        <p>For Avishkar Arista Developers LLP</p>
+    </div>
+    <div className="col-3 sign-cont">
+        <p>Customer Signature</p>
+    </div>
+</section>
+
+    </div>
+  )
+}
+
+export default CostSheet
+
+        /* <table className="ui celled table">
+        <thead>
+            <tr><th>Name</th>
+            <th>Age</th>
+            <th>Job</th>
+        </tr></thead>
+        <tbody>
+            <tr>
+            <td  data-label="Name">Date of Booking</td>
+            <td   data-label="Age">24th May 2022 5:30pm</td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>Unit & Floor No</td>
+                <td>Office 5th Floor</td>
+            </tr>
+
+        </tbody>
+</table> */
+/* <table class="table table-bordered">
+  <tbody>
+    <tr>
+      <td colSpan="5">Date of Booking</td>
+      <td>May 5, 2022, 5:20:47 AM</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table> */
