@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "client-install": "npm install --prefix client",
-    "start": "concurrently \"npm run app\" \"npm run client\"",
+    "start": "node index.js",
     "app": "node index.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run app\" \"npm run client\"",
