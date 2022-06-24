@@ -6,6 +6,11 @@ const app = express();
 app.use(bodyParser.json())
 app.use(cors())
 const PORT = process.env.PORT || 3002
+
+app.get("/",(req,res)=>{
+    res.send("welcome to cost realty backend")
+})
+
 app.post('/',(req,res)=>{
     readXlsxFile('./Master Cost Sheet - Platinum Capital KP (1) (2).xlsx',{sheet:req.body.sheet}).then((rows) => {
         // `rows` is an array of rows
