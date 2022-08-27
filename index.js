@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
 })
 
 app.post('/',(req,res)=>{
-    readXlsxFile('./Master Cost Sheet - Platinum Capital KP (1) (3).xlsx',{sheet:req.body.sheet}).then((rows) => {
+    readXlsxFile('./Master Cost Sheet - Platinum Capital KP Final.xlsx',{sheet:req.body.sheet}).then((rows) => {
         // `rows` is an array of rows
         res.send(rows)
         // each row being an array of cells.
