@@ -20,7 +20,7 @@ function CostSheet(props) {
     },[])
   return (
     <div className='cost-sheet'>
-        <h1>Cost Sheet & Payment Schedule For Office Platinum Towers</h1>
+        <h1>Cost Sheet & Payment Schedule For PLATINUM CAPITAL</h1>
 
 <div className='p-0 row row-cell m-auto'>
     <div className="p-2 col-cell col-10">
@@ -352,16 +352,16 @@ function CostSheet(props) {
 </div>
 
 <div className='note-head'>
-    <p className='note'>m) All Cheques should be in the name of : Avishkar Arista Developers LLP .</p>
+    <p className='note'>m) All Cheques should be in the name of :  A ADVANI PROPERTIES LLP .</p>
 </div>
 
 
 <section className="row m-auto justify-content-between sign">
     <div className="col-3 sign-cont">
-        <p>For Avishkar Arista Developers LLP</p>
+        <p>For A ADVANI PROPERTIES LLP</p>
     </div>
     <div className="col-3 sign-cont">
-        <p>For Avishkar Arista Developers LLP</p>
+        <p>For A ADVANI PROPERTIES LLP</p>
     </div>
     <div className="col-3 sign-cont">
         <p>Customer Signature</p>
